@@ -75,5 +75,3 @@ The Newton-Raphson Method is a powerful technique for finding roots. It uses the
 - May fail if \( f'(x_n) = 0 \) or if the initial guess is too far from the root.
 
 ---
-
-These explanations should provide a clear and concise overview for your README. Let me know if you’d like further refinement!
