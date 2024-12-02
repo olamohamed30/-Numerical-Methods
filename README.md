@@ -6,7 +6,7 @@ The Bisection Method is a numerical technique used to find the root of a continu
 
 **Algorithm**:
 1. **Initial Check**:
-   - Verify that the function \( f(x) \) has opposite signs at \( a \) and \( b \), i.e., \( f(a) \cdot f(b) < 0 \). If not, the method cannot be applied.
+   - Verify that the function \( f(x) \) has opposite signs at \( a \) and \( b \)
 
 2. **Iteration**:
    - Compute the midpoint of the interval:  
@@ -24,7 +24,7 @@ The Bisection Method is a numerical technique used to find the root of a continu
 
 **Key Advantages**:
 - Guaranteed to converge if the initial interval is valid.
-- Simple and robust.
+- Simple 
 
 **Limitations**:
 - Slow convergence compared to other methods.
