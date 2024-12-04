@@ -73,5 +73,69 @@ The Newton-Raphson Method is a powerful technique for finding roots. It uses the
 **Limitations**:
 - Requires the derivative \( f'(x) \).
 - May fail if \( f'(x_n) = 0 \) or if the initial guess is too far from the root.
+---
+
+### **2.1 Jacobi Iterative Method**
+
+The Jacobi Method is an iterative technique for solving \( Ax = b \). It updates each variable independently using values from the previous iteration.
+
+**Steps**:
+1. Rearrange each equation to solve for one variable in terms of the others.
+2. Start with an initial guess \( x^{(0)} \).
+3. Compute the next approximation:
+   \[
+   x_i^{(k+1)} = \frac{b_i - \sum_{j \neq i} A_{ij} x_j^{(k)}}{A_{ii}}
+   \]
+4. Repeat until the solution converges.
+
+**Advantages**:
+- Easy to implement.
+- Works for diagonally dominant matrices.
+
+**Limitations**:
+- Slow for large systems.
+- Requires a diagonally dominant or well-conditioned matrix.
+
+---
+
+### **2.2 Gauss-Seidel Iterative Method**
+The Gauss-Seidel Method is an improvement over the Jacobi Method. It uses the most recent updates in calculations, which often leads to faster convergence.
+
+**Steps**:
+1. Rearrange each equation to solve for one variable in terms of the others.
+2. Start with an initial guess \( x^{(0)} \).
+3. Compute the next approximation:
+   \[
+   x_i^{(k+1)} = \frac{b_i - \sum_{j < i} A_{ij} x_j^{(k+1)} - \sum_{j > i} A_{ij} x_j^{(k)}}{A_{ii}}
+   \]
+4. Repeat until the solution converges.
+
+**Advantages**:
+- Faster convergence than Jacobi Method.
+- More efficient use of computations.
+
+**Limitations**:
+- Requires a diagonally dominant or well-conditioned matrix.
+
+---
+
+### **2.3 Successive Over-Relaxation (SOR) Method**
+The Successive Over-Relaxation (SOR) Method improves on Gauss-Seidel by introducing a relaxation factor \( \omega \), which accelerates convergence for well-chosen \( \omega \).
+
+**Steps**:
+1. Start with an initial guess \( x^{(0)} \).
+2. Compute the next approximation:
+   \[
+   x_i^{(k+1)} = (1 - \omega) x_i^{(k)} + \frac{\omega}{A_{ii}} \left( b_i - \sum_{j < i} A_{ij} x_j^{(k+1)} - \sum_{j > i} A_{ij} x_j^{(k)} \right)
+   \]
+3. Repeat until the solution converges.
+
+**Advantages**:
+- Faster convergence with an optimal \( \omega \).
+- Generalized version of Gauss-Seidel.
+
+**Limitations**:
+- Requires choosing the correct \( \omega \) for efficiency.
+- May not converge for poorly conditioned matrices.
 
 ---
