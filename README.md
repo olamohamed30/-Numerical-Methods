@@ -139,3 +139,55 @@ The Successive Over-Relaxation (SOR) Method improves on Gauss-Seidel by introduc
 - May not converge for poorly conditioned matrices.
 
 ---
+
+### **3.1 Lagrange Interpolation**
+Lagrange Interpolation constructs a polynomial passing through all given points.
+
+**Steps**:
+1. Use each known point \( (x_i, y_i) \) to construct a term:
+   \[
+   L_i(x) = \prod_{j \neq i} \frac{x - x_j}{x_i - x_j}
+   \]
+2. Multiply \( L_i(x) \) by \( y_i \) and sum them up:
+   \[
+   P(x) = \sum_{i=0}^n y_i \cdot L_i(x)
+   \]
+3. The result is the interpolated value at \( x \).
+
+---
+
+### **3.2 Difference Operators**
+
+Difference Operators help compute differences between consecutive points to approximate derivatives.
+
+**Steps for Forward Difference**:
+1. Compute differences between adjacent \( y \)-values:
+   \[
+   \Delta y_i = y_{i+1} - y_i
+   \]
+2. Repeat to form higher-order differences.
+
+---
+
+### **3.4 Newton Forward-Difference Formula**
+Newton Forward-Difference Formula approximates values near the beginning of the data.
+
+**Formula**:
+\[
+P(x) = y_0 + u\Delta y_0 + \frac{u(u-1)}{2!}\Delta^2 y_0 + \dots
+\]
+Where \( u = \frac{x - x_0}{h} \).
+
+---
+
+### **3.5 Newton Backward-Difference Formula**
+
+Newton Backward-Difference Formula approximates values near the end of the data.
+
+**Formula**:
+\[
+P(x) = y_n + u\Delta y_{n-1} + \frac{u(u+1)}{2!}\Delta^2 y_{n-2} + \dots
+\]
+Where \( u = \frac{x - x_n}{h} \).
+
+---
